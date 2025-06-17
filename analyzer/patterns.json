@@ -1,0 +1,43 @@
+{
+  "general": [
+    {
+      "name": "Failed Login",
+      "pattern": "failed login|authentication failure"
+    },
+    {
+      "name": "Root Access",
+      "pattern": "user=root"
+    },
+    {
+      "name": "SQL Injection Attempt",
+      "pattern": "(\\%27)|(--)|(%23)|(#)"
+    },
+    {
+      "name": "XSS Attempt",
+      "pattern": "<script>|%3Cscript%3E"
+    },
+    {
+      "name": "Sensitive File Access",
+      "pattern": "/etc/passwd|shadow|id_rsa"
+    },
+    {
+      "name": "IP Address Detected",
+      "pattern": "(\\d{1,3}\\.){3}\\d{1,3}"
+    }
+  ],
+  "nginx": [
+    {
+      "name": "Suspicious Endpoint Access",
+      "pattern": "/(admin|wp-login|phpmyadmin|\\.git|\\.env)"
+    },
+    {
+      "name": "Unauthorized Access Attempt",
+      "pattern": "\" (401|403|500) "
+    },
+    {
+      "name": "Login Attempt via Curl",
+      "pattern": "curl/[\\d\\.]+"
+    }
+  ]
+}
+
