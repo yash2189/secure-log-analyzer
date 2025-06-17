@@ -4,7 +4,7 @@ A lightweight and extensible **CLI-based tool** to analyze application and serve
 
 Built with security best practices, modern Python tooling, and an extensible architecture.
 
----
+
 
 ## 🚀 Features
 
@@ -18,9 +18,9 @@ Built with security best practices, modern Python tooling, and an extensible arc
 - 📦 Clean project scaffolding via Cookiecutter
 - 🔐 Static analysis and secret scanning via pre-commit hooks
 
----
 
----
+
+
 ## 📦 Installation & Usage
 
 ```bash
@@ -33,7 +33,7 @@ pip install -e .[dev]
 # Analyze a log file
 python main.py --file sample_logs/app.log --top-ips 5
 
----
+
 
 ## ✅ Pre-commit Setup
 
@@ -41,7 +41,7 @@ python main.py --file sample_logs/app.log --top-ips 5
 pre-commit install
 pre-commit run --all-files
 
----
+
 
 ## 🧱 Folder Structure
 
@@ -62,5 +62,3 @@ secure-log-analyzer/
 ├── .pre-commit-config.yaml   # Pre-commit hook config
 ├── .secrets.baseline         # Baseline for detect-secrets
 └── README.md
-
----

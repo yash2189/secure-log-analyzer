@@ -1,36 +1,36 @@
-default_stages: [commit]
+default_stages: [prepare-commit-msg, commit-msg, pre-commit, manual, pre-push]
 fail_fast: true
 
 repos:
   # Code formatters
   - repo: https://github.com/psf/black
-    rev: 23.3.0
+    rev: 25.1.0
     hooks:
       - id: black
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.0.241
+    rev: v0.11.13
     hooks:
       - id: ruff
 
   # Type checker
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.5.1
+    rev: v1.16.0
     hooks:
       - id: mypy
 
   # Security tools
   - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.6
+    rev: 1.8.5
     hooks:
       - id: bandit
-        args: ["-r", "analyzer", "--quiet"]
+        args: ["--quiet"]
 
   - repo: https://github.com/Yelp/detect-secrets
-    rev: v1.4.0
+    rev: v1.5.0
     hooks:
       - id: detect-secrets
-        args: ["--baseline", ".secrets.baseline"]
+        args: ["--baseline", ".secrets.baseline", "--verbose"]
 
   # Docstring linter
   - repo: https://github.com/PyCQA/pydocstyle
@@ -40,7 +40,7 @@ repos:
 
   # Housekeeping
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v5.0.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
